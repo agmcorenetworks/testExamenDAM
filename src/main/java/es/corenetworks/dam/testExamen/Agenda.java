@@ -14,10 +14,12 @@ public class Agenda {
 	private int[] agenda=new int [100];
 	
 	public Agenda() {
+		numeroContactos=0;
 		this.agenda=new int [Constantes.TAMAÑO_AGENDA];
 	}
 	
 	public Agenda(int tamanyo) {
+		numeroContactos=0;
 		this.agenda=new int [tamanyo];
 	}
 	

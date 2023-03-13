@@ -17,7 +17,7 @@ import es.corenetworks.dam.testExamen.utilidades.PosicionVaciaException;
 import es.corenetworks.dam.testExamen.utilidades.Utilidades;
 
 public class TestExamenTests {
-	
+
 	int telefono1 = 62412343;
 	int telefono2 = 72342344;
 
@@ -27,7 +27,7 @@ public class TestExamenTests {
 	// testing de la clas constantes
 
 	// chequea que la clase existe y está en el paquete correcto
-	@Test()
+	@Test
 	public void checkClassConstantes() throws ClassNotFoundException {
 		try {
 			Class.forName("es.corenetworks.dam.testExamen.utilidades.Utilidades");
@@ -37,7 +37,7 @@ public class TestExamenTests {
 	}
 
 	// chequea que las constantes estan declaradas y tienen el valor correcto
-	@Test()
+	@Test
 	public void checkClassConstantes_constantes() throws ClassNotFoundException {
 		assertEquals(Constantes.NUMERO_NO_VALIDO_EXCEPTION, "Numero no valido", "NUMERO_NO_VALIDO_EXCEPTION erroneo");
 		assertEquals(Constantes.POSICION_VACIA_EXCEPTION, "No hay numero en esa posicion",
@@ -49,7 +49,7 @@ public class TestExamenTests {
 				"NUMERO_NOT_FOUND_EXCEPTION erroneo");
 	}
 
-	@Test()
+	@Test
 	public void checkExceptions_exists() {
 		try {
 			Class.forName("es.corenetworks.dam.testExamen.utilidades.NumeroNotFoundException");
@@ -61,7 +61,7 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassUtilidades_getLongitudNumero() {
 		assertEquals(Utilidades.getLongitudNumero(0), 1, "Utilidades.getLongitudNumero erroneo");
 		assertEquals(Utilidades.getLongitudNumero(5), 1, "Utilidades.getLongitudNumero erroneo");
@@ -73,7 +73,7 @@ public class TestExamenTests {
 		assertEquals(Utilidades.getLongitudNumero(123456789), 9, "Utilidades.getLongitudNumero erroneo");
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_exists() {
 		try {
 			Class.forName("es.corenetworks.dam.testExamen.Agenda");
@@ -82,23 +82,22 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_constructorSinParametros() {
 		Agenda myAgenda = new Agenda();
 		assertNotNull(myAgenda);
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_constructorConParametros() {
 		Agenda myAgenda = new Agenda(10);
 		assertNotNull(myAgenda);
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_añadirNumero_tamañoAgenda() {
 		Agenda myAgenda = new Agenda();
 
-		
 		try {
 			System.out.println("agenda vacia: " + myAgenda.estaVacia());
 			myAgenda.añadirNumero(telefono1);
@@ -132,10 +131,9 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_buscarNumero() {
 		Agenda myAgenda = new Agenda();
-		
 
 		try {
 			System.out.println("agenda vacia: " + myAgenda.estaVacia());
@@ -179,7 +177,7 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_getNumeroEnPosicion() {
 		Agenda myAgenda = new Agenda();
 
@@ -238,11 +236,10 @@ public class TestExamenTests {
 
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_eliminarNumero() {
 		Agenda myAgenda = new Agenda();
 
-	
 		try {
 			System.out.println("agenda vacia: " + myAgenda.estaVacia());
 
@@ -285,7 +282,6 @@ public class TestExamenTests {
 			assertEquals(posicion4, 3);
 			int tfn4 = myAgenda.getNumeroEnPosicion(posicion4);
 			assertEquals(telefono4, tfn4);
-			
 
 			myAgenda.eliminarNumero(telefono1);
 			System.out.println("tamanyo de la agenda: " + myAgenda.getTamanyoAgenda());
@@ -301,7 +297,7 @@ public class TestExamenTests {
 			System.out.println(e.getMessage());
 		} catch (NumeroNotFoundException e) {
 			System.out.println(e.getMessage());
-		}  catch (PosicionVaciaException e) {
+		} catch (PosicionVaciaException e) {
 			System.out.println(e.getMessage());
 		} catch (PosicionNoValidaException e) {
 			System.out.println(e.getMessage());
