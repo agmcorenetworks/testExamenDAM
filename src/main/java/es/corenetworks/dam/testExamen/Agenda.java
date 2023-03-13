@@ -79,6 +79,17 @@ public class Agenda {
         return agenda[posicion];
     }
 
+    public boolean estaVacia() {
+        return numContactos == 0;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main (String []args) {
 	Agenda agenda = new Agenda(50);
 	try {
@@ -105,7 +116,7 @@ public class Agenda {
 	}
 	*/
 	try {
-		agenda.getNumeroEnPosicion(55);
+		agenda.getNumeroEnPosicion(2);
 	} catch (PosicionNoValidaException e1) {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
