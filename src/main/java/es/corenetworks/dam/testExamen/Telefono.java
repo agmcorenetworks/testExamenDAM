@@ -29,7 +29,7 @@ public class Telefono {
 			}*/
 			System.out.println(agenda1.getTamanyoAgenda());
 			try {
-				System.out.println(agenda1.buscarNumero(87654321));
+				System.out.println(agenda1.buscarNumero(12345678));
 			} catch (NumeroNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -45,6 +45,7 @@ public class Agenda {
 		}
 		return salida;	
 	}
+	
 	boolean eliminarNumero(int telefono) throws NumeroNoValidoException { //ESTA BIEN
 	boolean salida = false;
 	Utilidades uti = new Utilidades();
