@@ -12,15 +12,17 @@ public class Agenda {
 	
 	private static int elementos;
 	
-	Agenda () {
+	public Agenda () {
 		agenda = new int[Constantes.TAMAÑO_AGENDA];
 	}
 	
-	Agenda (int tamaño) {
+	public Agenda (int tamaño) {
 		agenda = new int [tamaño];
 	}
 	
 	public int getTamanyoAgenda () {
+		
+		elementos = 0;
 		
 		for (int i = 0 ; i < agenda.length ; i++) {
 			
@@ -29,7 +31,7 @@ public class Agenda {
 			}
 		}
 		
-		return Agenda.elementos;
+		return elementos;
 		
 	}
 	
