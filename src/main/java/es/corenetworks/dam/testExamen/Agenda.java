@@ -3,6 +3,7 @@ package es.corenetworks.dam.testExamen;
 import es.corenetworks.dam.testExamen.utilidades.Constantes;
 import es.corenetworks.dam.testExamen.utilidades.NumeroNoValidoException;
 import es.corenetworks.dam.testExamen.utilidades.NumeroNotFoundException;
+import es.corenetworks.dam.testExamen.utilidades.PosicionNoValidaException;
 import es.corenetworks.dam.testExamen.utilidades.PosicionVaciaException;
 import es.corenetworks.dam.testExamen.utilidades.Utilidades;
 
@@ -112,14 +113,14 @@ public class Agenda {
 		return confirmador;
 	}
 
-	public int getNumeroEnPosicion(int posicion) throws PosicionVaciaException {
+	public int getNumeroEnPosicion(int posicion) throws PosicionVaciaException, PosicionNoValidaException {
 		if (posicion < 0 || posicion >= miArray.length) {
 			
-			throw new PosicionVaciaException("La posición " + posicion + " no es una posición válida en el array.");
+			throw new PosicionNoValidaException("La posición no es una posición válida en el array.");
 			
 		} else if (miArray[posicion] == 0) {
 			
-			throw new PosicionVaciaException("La posición " + posicion + " está vacía en el array.");
+			throw new PosicionVaciaException("La posición está vacía en el array.");
 			
 		} else {
 			
