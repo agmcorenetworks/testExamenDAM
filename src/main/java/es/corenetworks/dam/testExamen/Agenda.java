@@ -14,15 +14,26 @@ public class Agenda {
 		agenda = new int[Constantes.TAMAÑO_AGENDA];
 	}
 
-	public Agenda(int tamano) {
-		agenda = new int[tamano];
+	public Agenda(int tamaño) {
+		agenda = new int[tamaño];
 	}
 
-	public int getTamanyoAgenda() {
-		return contador;
+public int getTamanyoAgenda () {
+		
+		int elementos = 0;
+		
+		for (int i = 0 ; i < agenda.length ; i++) {
+			
+			if (agenda[i] != 0) {
+				elementos += 1;
+			}
+		}
+		
+		return elementos;
+		
 	}
 
-	public void anadirNumero(int numero) throws NumeroNoValidoException {
+	public void añadirNumero(int numero) throws NumeroNoValidoException {
 		if (String.valueOf(numero).length() != 8) {
 			throw new NumeroNoValidoException(Constantes.NUMERO_NO_VALIDO_EXCEPTION);
 		}
