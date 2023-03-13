@@ -24,14 +24,16 @@ public class Agenda {
 		miArray = new int[num];
 	}
 
+	
 	public int getTamanyoAgenda() {
 
 		int cantNum = 0;
 
 		for (int i = 0; i < miArray.length; i++) {
 
-			if (i != 0) {
+			if (miArray[i] != 0) {
 				cantNum += 1;
+			
 			}
 		}
 
@@ -51,6 +53,8 @@ public class Agenda {
 				if (miArray[i] == 0) {
 
 					miArray[i] = numTelefono;
+					
+					break;
 				}
 			}
 		}
@@ -65,7 +69,7 @@ public class Agenda {
 
 			if (miArray[i] == numTelefono) {
 
-				posicionTelefono = miArray[i];
+				posicionTelefono = i;
 				verificador += 1;
 			}
 
@@ -137,7 +141,7 @@ public class Agenda {
 		for (int i = 0; i < miArray.length; i++) {
 		    if (miArray[i] != 0) {
 		        todosCeros = false;
-		        break;
+		        
 		    }
 		}
 
@@ -145,7 +149,18 @@ public class Agenda {
     }
 	
 	
-	
+	public static void main(String [ ]args ) {
+		Agenda myAgenda = new Agenda();
+		
+		try {
+			myAgenda.añadirNumero(62412343);
+		} catch (NumeroNoValidoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(myAgenda.getTamanyoAgenda());
+
+	}
 	
 	
 	
