@@ -36,8 +36,11 @@ Clase Agenda, esta clase contiene:
 - un metodo estaVacia sin parametros que devuelve true si no hay numeros guardados en la agenda y false en otro caso
 
 Clase Telefono, que crea una agenda y utiliza los metodos para guardar distintos numeros de telefono en un metodo main
+<<<<<<< HEAD
 e
 
 
 
 
+=======
+>>>>>>> simulacro_examen
