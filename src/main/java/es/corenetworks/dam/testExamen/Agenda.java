@@ -3,6 +3,8 @@ package es.corenetworks.dam.testExamen;
 import es.corenetworks.dam.testExamen.utilidades.Constantes;
 import es.corenetworks.dam.testExamen.utilidades.NumeroNoValidoException;
 import es.corenetworks.dam.testExamen.utilidades.NumeroNotFoundException;
+import es.corenetworks.dam.testExamen.utilidades.PosicionNoValida;
+import es.corenetworks.dam.testExamen.utilidades.PosicionVaciaException;
 
 public class Agenda {
 	
@@ -85,6 +87,34 @@ public class Agenda {
          return false;
      }
      
-}
+     
+     public int getNumeroEnPosicion(int posicion) throws PosicionNoValida, PosicionVaciaException {
+         if (posicion < 0 || posicion >= agenda.length) {
+             throw new PosicionNoValida("La posicion del numero no es valida");
+         }
+
+         if (agenda[posicion] == 0) {
+             throw new PosicionVaciaException("La posicion del numero está vacia");
+         }
+
+         return agenda[posicion];
+     }
+     
+     
+     public boolean estaVacia() {
+    	 
+    	 boolean estado = true;
+    	 
+    	 for (int i = 0; i < agenda.length; i++) {
+    		 
+    		 if(agenda[i] != 0) {
+    			 estado = false;
+    		 }
+    	 }
+    	return estado;
+     }
+ }
+     
+
 	
 
