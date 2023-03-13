@@ -13,11 +13,11 @@ public class Agenda {
 	private static int numeroContactos=0;
 	private int[] agenda=new int [100];
 	
-	Agenda() {
+	public Agenda() {
 		this.agenda=new int [Constantes.TAMAÑO_AGENDA];
 	}
 	
-	Agenda(int tamanyo) {
+	public Agenda(int tamanyo) {
 		this.agenda=new int [tamanyo];
 	}
 	
