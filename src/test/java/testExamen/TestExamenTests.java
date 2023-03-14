@@ -1,14 +1,12 @@
 package testExamen;
 
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
-import junit.framework.Test;
-
-
+import org.junit.jupiter.api.Test;
 
 import es.corenetworks.dam.testExamen.Agenda;
 import es.corenetworks.dam.testExamen.utilidades.Constantes;
@@ -29,7 +27,7 @@ public class TestExamenTests {
 	// testing de la clas constantes
 
 	// chequea que la clase existe y está en el paquete correcto
-	@Test()
+	@Test 
 	public void checkClassConstantes() throws ClassNotFoundException {
 		try {
 			Class.forName("es.corenetworks.dam.testExamen.utilidades.Utilidades");
@@ -39,7 +37,7 @@ public class TestExamenTests {
 	}
 
 	// chequea que las constantes estan declaradas y tienen el valor correcto
-	@Test()
+	@Test
 	public void checkClassConstantes_constantes() throws ClassNotFoundException {
 		assertEquals(Constantes.NUMERO_NO_VALIDO_EXCEPTION, "Numero no valido", "NUMERO_NO_VALIDO_EXCEPTION erroneo");
 		assertEquals(Constantes.POSICION_VACIA_EXCEPTION, "No hay numero en esa posicion",
@@ -51,7 +49,7 @@ public class TestExamenTests {
 				"NUMERO_NOT_FOUND_EXCEPTION erroneo");
 	}
 
-	@Test()
+	@Test
 	public void checkExceptions_exists() {
 		try {
 			Class.forName("es.corenetworks.dam.testExamen.utilidades.NumeroNotFoundException");
@@ -63,7 +61,7 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassUtilidades_getLongitudNumero() {
 		assertEquals(Utilidades.getLongitudNumero(0), 1, "Utilidades.getLongitudNumero erroneo");
 		assertEquals(Utilidades.getLongitudNumero(5), 1, "Utilidades.getLongitudNumero erroneo");
@@ -75,7 +73,7 @@ public class TestExamenTests {
 		assertEquals(Utilidades.getLongitudNumero(123456789), 9, "Utilidades.getLongitudNumero erroneo");
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_exists() {
 		try {
 			Class.forName("es.corenetworks.dam.testExamen.Agenda");
@@ -84,19 +82,19 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_constructorSinParametros() {
 		Agenda myAgenda = new Agenda();
 		assertNotNull(myAgenda);
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_constructorConParametros() {
 		Agenda myAgenda = new Agenda(10);
 		assertNotNull(myAgenda);
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_añadirNumero_tamañoAgenda() {
 		Agenda myAgenda = new Agenda();
 
@@ -134,7 +132,7 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_buscarNumero() {
 		Agenda myAgenda = new Agenda();
 		
@@ -181,7 +179,7 @@ public class TestExamenTests {
 		}
 	}
 
-	@Test()
+	@Test
 	public void checkClassAgenda_getNumeroEnPosicion() {
 		Agenda myAgenda = new Agenda();
 
@@ -240,7 +238,7 @@ public class TestExamenTests {
 
 	}
 
-	@Test()
+	@Test 
 	public void checkClassAgenda_eliminarNumero() {
 		Agenda myAgenda = new Agenda();
 
@@ -290,7 +288,7 @@ public class TestExamenTests {
 			
 
 			myAgenda.eliminarNumero(telefono1);
-			System.out.println("tamanyo de la agenda: " + myAgenda.getTamanyoAgenda());
+			System.out.println("tamanyo de la agenda: " + myAgenda.getTamanyoAgenda()); 
 			assertEquals(myAgenda.getTamanyoAgenda(), 3);
 
 			System.out.println("agenda vacia: " + myAgenda.estaVacia());

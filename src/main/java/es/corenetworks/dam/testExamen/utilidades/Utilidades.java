@@ -11,17 +11,4 @@ public class Utilidades {
 		return num.length();
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		Utilidades u1 = new Utilidades();
-//		System.out.println(u1.getLongitudNumero(567));
-		
-	}
-
 }
