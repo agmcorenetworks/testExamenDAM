@@ -12,7 +12,7 @@ import es.corenetworks.dam.testExamen.Agenda;
 import es.corenetworks.dam.testExamen.utilidades.Constantes;
 import es.corenetworks.dam.testExamen.utilidades.NumeroNoValidoException;
 import es.corenetworks.dam.testExamen.utilidades.NumeroNotFoundException;
-import es.corenetworks.dam.testExamen.utilidades.PosicionNoValida;
+import es.corenetworks.dam.testExamen.utilidades.PosicionNoValidaException;
 import es.corenetworks.dam.testExamen.utilidades.PosicionVaciaException;
 import es.corenetworks.dam.testExamen.utilidades.Utilidades;
 
@@ -232,7 +232,7 @@ public class TestExamenTests {
 			System.out.println(e.getMessage());
 		} catch (PosicionVaciaException e) {
 			System.out.println(e.getMessage());
-		} catch (PosicionNoValida e) {
+		} catch (PosicionNoValidaException e) {
 			System.out.println(e.getMessage());
 		}
 
@@ -303,7 +303,7 @@ public class TestExamenTests {
 			System.out.println(e.getMessage());
 		}  catch (PosicionVaciaException e) {
 			System.out.println(e.getMessage());
-		} catch (PosicionNoValida e) {
+		} catch (PosicionNoValidaException e) {
 			System.out.println(e.getMessage());
 		}
 	}
